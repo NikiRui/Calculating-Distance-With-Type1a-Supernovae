@@ -1,0 +1,10 @@
+m = float(input("What is the apparent magnitude? "))
+
+d = 10**((5+m+19.3)/5)
+
+#Print the result in parsecs!
+print(d," parsecs")
+
+#Want the number in light years?
+dly = d*3.26
+print(dly," light years")
