@@ -1,6 +1,6 @@
-m = float(input("What is the apparent magnitude? "))
-
-d = 10**((5+m+19.3)/5)
+#If you do not have the measured extinction, use this:
+m = float(input("What was the peak apparent magnitude? "))
+d = 10**((5 + m + 19.3) /5)
 
 #Print the result in parsecs!
 print(d," parsecs")
@@ -8,3 +8,14 @@ print(d," parsecs")
 #Want the number in light years?
 dly = d*3.26
 print(dly," light years")
+
+#If you have the measured extinction, use this:
+A = float(input("What was the measured extinction? "))
+d2 = 10**((m - 19.6 - A + 5) /5)
+
+#Print the result in parsecs:
+print(d2," parsecs")
+
+#Light years:
+d2ly = d*3.26
+print(d2ly," light years")
