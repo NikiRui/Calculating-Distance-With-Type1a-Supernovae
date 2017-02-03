@@ -1,21 +1,30 @@
 #If you do not have the measured extinction, use this:
 m = float(input("What was the peak apparent magnitude? "))
-d = 10**((5 + m + 19.3) /5)
+dmin = 10**((5 + m + 19.3) /5)
+dmax = 10**((5 + m + 19.6) /5)
 
 #Print the result in parsecs!
-print(d," parsecs")
+print(dmin," parsecs (minimum)")
+print(dmax," parsecs (maximum)")
 
 #Want the number in light years?
-dly = d*3.26
-print(dly," light years")
+dminly = dmin*3.26
+dmaxly = dmax*3.26
+print(dminly," light years (minimum)")
+print(dmaxly," light years (maximum)")
 
 #If you have the measured extinction, use this:
-A = float(input("What was the measured extinction? "))
-d2 = 10**((m - 19.6 - A + 5) /5)
+#Measured extinction is the magnitude of light extincted by gas and dust
+A = float(input("What was the measured extinction of light? "))
+d2min = 10**((m + 19.3 - A + 5) /5)
+d2max = 10**((m + 19.6 - A + 5) /5)
 
 #Print the result in parsecs:
-print(d2," parsecs")
+print(d2min," parsecs (minimum)")
+print(d2max," parsecs (maximum)")
 
 #Light years:
-d2ly = d*3.26
-print(d2ly," light years")
+d2minly = d2min*3.26
+d2maxly = d2max*3.26
+print(d2minly," light years (minimum)")
+print(d2maxly," light years (maximum)")
